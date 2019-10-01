@@ -49,12 +49,12 @@ export default class Categories extends Component {
                     error: null
                 });
 
-                // fetch('https://api.opencagedata.com/geocode/v1/json?q=' + this.state.latitude + '+' + this.state.longitude + '&key=09e077243d424452961b06a6a3349d1f')
-                //     .then((response) => response.json())
-                //     .then((responseJson) => {
-                //         this.setState({ city: responseJson.results[0].components.city });
-                //         ToastAndroid.show("you are in ... " + this.state.city, ToastAndroid.SHORT);
-                //     })
+                fetch('https://api.opencagedata.com/geocode/v1/json?q=' + this.state.latitude + '+' + this.state.longitude + '&key=09e077243d424452961b06a6a3349d1f')
+                    .then((response) => response.json())
+                    .then((responseJson) => {
+                        this.setState({ city: responseJson.results[0].components.city });
+                        ToastAndroid.show("you are in ... " + this.state.city, ToastAndroid.SHORT);
+                    })
 
 
             },
